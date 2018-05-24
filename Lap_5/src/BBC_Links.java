@@ -22,10 +22,19 @@ public class BBC_Links {
 		
 		System.out.println(list.size());
 		for(WebElement lst: list) {
+			System.out.print(lst.getText()+"\t\n");
 			
-			System.out.println(lst.getText());
+			
 		}
 	
+		List<WebElement> detail = table.findElements(By.className("media__summary"));
+		
+		for(WebElement dt: detail) {
+			
+			System.out.print("\t\t"+dt.getText());
+		}
+		System.out.println("");
+		
 		Thread.sleep(500);
 		driver.close();
 		System.out.println(" Finish !!!");
