@@ -19,7 +19,7 @@ public class JQuery_Practice {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
 		//^^^^^^^^^^^^									//
-		//เลือกเฟรม  (Select Frame) 									//
+		//เลือกเฟรม  (Select Frame) 	 ถ้าไม่มีเฟรมอื่รใส่ค่าในเฟรมเป็น 0 ได้เลย		driver.switchTo().frame(0);						//
 		driver.findElement(By.id("datepicker")).click();
 		WebElement table = driver.findElement(By.className("ui-datepicker-calendar"));
 
@@ -36,15 +36,7 @@ public class JQuery_Practice {
 			break ;
 			}
 		}
-//		
-		
-//	
-//		List<WebElement> detail = table.findElements(By.className("media__summary"));
-//		
-//		for(WebElement dt: detail) {
-//			
-//			System.out.print("\t\t"+dt.getText());
-//		}
+//
 		System.out.println("");
 		
 //		Thread.sleep(500);
