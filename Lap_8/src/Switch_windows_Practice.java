@@ -1,6 +1,8 @@
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -15,32 +17,43 @@ public class Switch_windows_Practice {
 		WebDriver driver = new ChromeDriver();
 		
 		
-		driver.get("https://www.flipkart.com/");
+		driver.get("https://www.yahoo.com/");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
-		if(driver.findElement(By.xpath("//*[@class='_32LSmx']")).isDisplayed())
-			driver.findElement(By.xpath("//*[@class='_2AkmmA _29YdH8']")).click();
+		driver.findElement(By.xpath("//*[@id='uh-search-box']")).sendKeys("Bnk48");
 		
-		driver.findElement(By.className("LM6RPg")).click();
-		driver.findElement(By.className("LM6RPg")).sendKeys("Iphone x");
-		
-		List<WebElement> list = driver.findElements(By.className("_1va75j"));
-		
+		List<WebElement> list = driver.findElements(By.className("yui3-aclist-item"));
+		Thread.sleep(4000);
+
 		for(int i = 0;i<list.size();i++) {
-			System.out.println(" - "+list.get(i).getText());	
+			String date = list.get(i).getText();
+			if(date.equalsIgnoreCase("bnk48")) {	
+			list.get(i).click();
+			break ;
 			}
+		}
 		
-//		Thread.sleep(500);
-//		driver.close();
-		System.out.println(" Finish !!!");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='web']/ol/li[1]/div/div[1]/h3/a")).click();
 		
+		Set <String> winId = driver.getWindowHandles(); 
+		List <String> winlis = new ArrayList<String>(winId); 
+		for (int i = 0; i < winlis.size(); i++){
+			System.out.println(" "+winlis.get(i).toString()); 
+			} 
+		Thread.sleep(2000);
+		driver.switchTo().window(winlis.get(1).toString()); 
+		driver.close();
+		Thread.sleep(2000);
+		driver.switchTo().window(winlis.get(0).toString()); 
+		driver.close();
+
+//		
+////		Thread.sleep(500);
+////		driver.close();
+//		System.out.println(" Finish !!!");
+//		
 				
-	}
-	
-	public static int getCurrentDate() {
-		Calendar now = Calendar.getInstance();
-		int today = now.get(Calendar.DAY_OF_MONTH);
-		return today ;
 	}
 	
 
