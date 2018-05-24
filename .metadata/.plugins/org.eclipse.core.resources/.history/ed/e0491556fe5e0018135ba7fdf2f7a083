@@ -1,0 +1,23 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class FindJob_practice {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = null;
+		System.setProperty("webdriver.chrome.driver", "C:/Users/NPRU/Desktop/Selenium ÃÒªÀÑ®¹¤Ã»°Á/Jar/BrowserDriver/chromedriver.exe");
+		driver = new ChromeDriver();
+		
+		driver.get("http://www.ebay.com");
+	
+		driver.get("http://www.google.co.th");
+	
+		Thread.sleep(4000);
+		driver.close();
+		System.out.println("Finish !!!");
+		
+		
+	}
+
+}

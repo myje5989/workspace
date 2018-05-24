@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;LinkCheack&apos; to &apos;Table_practice&apos;&#x0D;&#x0A;- Original project: &apos;Lap_4&apos;&#x0D;&#x0A;- Original element: &apos;LinkCheack&apos;&#x0D;&#x0A;- Renamed element: &apos;Table_practice&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LinkCheack&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{LinkCheack.java[LinkCheack" matchStrategy="1" name="Table_practice" qualified="false" references="true" similarDeclarations="false" stamp="1527133314522" textual="false" version="1.0"/>
+</session>
